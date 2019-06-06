@@ -1,15 +1,14 @@
-from payment-processor import PaymentProcessor
-from menu-item import MenuItem
-from card-scanner import CardScanner
+from payment_processor import PaymentProcessor
+from menu_item import MenuItem
+from card_scanner import CardScanner
 
 class Order():
-    def __init__(self, orderID, itemList, date, time, status, price, paymentStatus):
+    def __init__(self, orderID, itemList, date, time, status, paymentStatus):
         self.orderID = orderID
-        self.itemList = list()
+        self.itemList = itemList
         self.date = date
         self.time = time
         self.status = status
-        self.price = price
         self.paymentStatus = paymentStatus
         self.paymentInfo = None
         self.name = None
@@ -39,14 +38,14 @@ class Order():
     def getStatus(self):
         return self.status
 
-    def setStatus(self, status)
+    def setStatus(self, status):
         self.status = status
 
     def getPrice(self):
-        return self.price
-
-    def setPrice(price):
-        self.price = price
+        total = 0
+        for item in self.itemList:
+            total += item.getItemPrice()
+        return total
 
     def getPaymentStatus(self):
         return self.paymentStatus
@@ -73,4 +72,4 @@ class Order():
         self.phone = phone
 
     def __str__(self):
-        return self.orderID
+        return str(self.orderID)

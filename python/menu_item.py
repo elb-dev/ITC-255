@@ -26,7 +26,7 @@ class MenuItem():
     def getItemMods(self):
         return self.itemMods
 
-    def setItemMods(self, index, val)
+    def setItemMods(self, index, val):
         self.itemMods[index] = val
 
     def __str__(self):

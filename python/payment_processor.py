@@ -43,4 +43,4 @@ class PaymentProcessor():
         print("Refunded",price,"on",card,".")
 
     def __str__(self):
-        return self.processorID
+        return str(self.processorID)

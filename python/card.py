@@ -14,4 +14,4 @@ class Card():
         return self.cardCVV
 
     def __str__(self):
-        return self.cardNumber
+        return str(self.cardNumber)
