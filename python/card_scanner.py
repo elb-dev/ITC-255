@@ -6,7 +6,7 @@ class CardScanner():
         self.scannerID = scannerID
         self.date = date
         self.time = time
-        readerStatus = 0
+        self.readerStatus = 0
 
     def getScannerID(self):
         return self.scannerID
